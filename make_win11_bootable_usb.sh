@@ -21,8 +21,8 @@
 #   - wimlib-imagex (auto-installed via Homebrew if missing).
 #
 # Usage (interactive)
-#   chmod +x make_win11_usb_v5.sh
-#   bash ./make_win11_usb_v5.sh
+#   chmod +x make_win11_bootable_usb.sh
+#   bash ./make_win11_bootable_usb.sh
 #
 # Usage (non-interactive / CI)
 #   ISO_PATH="/Users/you/Downloads/Win11_24H2_x64.iso" \
