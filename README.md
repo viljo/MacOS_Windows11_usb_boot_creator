@@ -32,20 +32,20 @@ git clone <your-repo-url>
 cd <your-repo-folder>
 
 # 2) Make the script executable
-chmod +x make_win11_usb_v5.sh
+chmod +x make_win11_bootable_usb.sh
 
 # 3) Run (interactive)
-bash ./make_win11_usb_v5.sh
+bash ./make_win11_bootable_usb.sh
 ```
 
 **Non‑interactive / CI:**
 ```bash
-ISO_PATH="$HOME/Downloads/Win11_24H2_EnglishInternational_x64.iso" USB_DISK="/dev/disk4" bash ./make_win11_usb_v5.sh
+ISO_PATH="$HOME/Downloads/Win11_24H2_EnglishInternational_x64.iso" USB_DISK="/dev/disk4" bash ./make_win11_bootable_usb.sh
 ```
 
 **Auto‑pick latest ISO + single external disk:**
 ```bash
-AUTO=1 bash ./make_win11_usb_v5.sh
+AUTO=1 bash ./make_win11_bootable_usb.sh
 ```
 
 ---
@@ -132,21 +132,6 @@ Yes—same idea. If `install.wim` is >4 GiB, it will be split.
 
 **What about Secure Boot / TPM bypass?**  
 This script doesn’t modify installation checks. If you need customizations, build media in Windows with tools like Rufus.
-
----
-
-## Probability & Assumptions
-
-- **USB created successfully on macOS:** ~98%  
-- **Boots on a typical UEFI PC (GPT/FAT32):** ~95%  
-- **Needs alternative media (quirky firmware/USB):** ~5–10%
-
-**Assumptions/guesses:**  
-- Your ISO is valid and contains either `install.wim` or `install.esd`.  
-- Homebrew installs cleanly for `wimlib`.  
-- Target PC uses UEFI boot with USB enabled.
-
-*(Engineer humor: FAT32 is the small doorway; split WIM is how we get the sofa through.)*
 
 ---
 
